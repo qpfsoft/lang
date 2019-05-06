@@ -8,12 +8,12 @@ language translation
 ```php
 # en
 [
-     'welcome' => 'Hello {name}, nice to meet you!',
+     'welcome' => 'Hello {:name}, nice to meet you!',
 ]
 
 # zh
 [
-    'welcome' => '你好 {name}, 见到你很高兴!',
+    'welcome' => '你好 {:name}, 见到你很高兴!',
 ]
 ```
 
@@ -36,9 +36,20 @@ language translation
 
 ## 示例
 
+### 翻译语言
+
+```php
+// simple 对应 @root/langs/zh-cn/simple.php 语言包
+$lang->translate('simple', 'welcome', ['name'=>'qpf'], 'en-us'); // 'Hello qpf, nice to meet you!'
+$lang->translate('simple', 'welcome', ['name'=>'qpf'], 'zh-cn'); // '你好 qpf, 见到你很高兴!'
+$lang->translate('simple', 'welcome', ['name'=>'qpf']); // 可通过设置首选语言类型, 或客户端语言类型检查后, 可忽略
+```
+
+## 其它
+
 请自行查看`tests`目录内示例.
 
-## 翻译
+## 翻译词典
 
 网站多语言, 使用语言标记的好处是, 不用做词库(词库size很大), 翻译的语句更准确!
 
@@ -52,7 +63,7 @@ language translation
 
 ```php
 [
-	'phrase'    => [
+    'phrase'    => [
         'Phrase is for better translation'  => '短语是为了更好的翻译',
     ],
     
