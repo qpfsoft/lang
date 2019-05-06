@@ -85,7 +85,7 @@ abstract class LangPack
             return $this->translateMessage($type, $message, $lang);
         }
         
-        return null;
+        return $message;
     }
     
     /**

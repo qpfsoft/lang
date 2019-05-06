@@ -66,7 +66,7 @@ class ArrayLangPack extends LangPack
     {
         $file = $this->getPackPath($type, $lang);
 
-        return (array) $this->loadPackFile($file);
+        return $this->loadPackFile($file);
     }
     
     /**
@@ -90,19 +90,19 @@ class ArrayLangPack extends LangPack
     /**
      * 加载语言包类别文件
      * @param string $file 文件路径
-     * @return array|null
+     * @return array
      */
     protected function loadPackFile($file)
     {
+        $langs = [];
+        
         if (is_file($file)) {
             $langs = include $file;
             if (!is_array($langs)) {
                 $langs = [];
             }
-            
-            return $langs;
         }
         
-        return null;
+        return $langs;
     }
 }

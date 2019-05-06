@@ -30,6 +30,11 @@ class LangTest extends TestUnit
         return $this->lang->translate('error', 'translate  ok !');
     }
     
+    public function testBase3()
+    {
+        return $this->lang->translate('error', 'translate  ok !', [], 'en-us');
+    }
+    
     
     public function testgetClientLang()
     {

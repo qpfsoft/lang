@@ -78,3 +78,12 @@ $lang->translate('simple', 'welcome', ['name'=>'qpf']); // 可通过设置首选
 ]
 ```
 
+### 翻译语句
+
+词典默认限定为`en-us`语言, 所以当目标语言也是`en-us`时将不会进行翻译!
+
+```php
+$this->lang->translate('precision', 'translate  ok!', 'zh-cn'); // `翻译  ok!`
+$this->lang->translate('precision', 'Phrase is for better translation', 'zh-cn'); // `短语是为了更好的翻译`
+$this->lang->translate('precision', 'translate  ok!', 'en-us'); // `translate  ok!`
+```
