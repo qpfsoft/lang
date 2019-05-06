@@ -1,0 +1,9 @@
+/vendor/
+composer.phar
+composer.lock
+.idea
+.DS_Store
+.project
+.settings
+.buildpath
+.env
