@@ -103,6 +103,6 @@ abstract class LangPack
             return $dicts[$message];
         }
         
-        return null;
+        return $message;
     }
 }

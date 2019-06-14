@@ -83,7 +83,7 @@ class ArrayLangPack extends LangPack
         } else {
             $file .= str_replace('\\', '/', $type) . '.php';
         }
-        
+
         return $file;
     }
     

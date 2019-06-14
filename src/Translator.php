@@ -26,15 +26,21 @@ class Translator
     
     /**
      * 翻译
-     * @param string $type
+     * @param string $type `类别/子类别`
      * @param string $message
      * @param array $params
      * @param string $lang
      */
     public function translate($type, $message, array $params, $lang)
     {
+        if (strpos($type, '/')) {
+            list($type, $name) = explode('/', $type, '2');
+        } else {
+            $name = $type;
+        }
         $pack = $this->getLangpack($type);
-        $message = $pack->translate($type, $message, $lang);
+        
+        $message = $pack->translate($name, $message, $lang);
         return $this->format($message, $params);
     }
     
